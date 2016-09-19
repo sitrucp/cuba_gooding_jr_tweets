@@ -15,7 +15,9 @@ api = tweepy.API(auth)
 def main():
 	with open('cubatweets.csv', 'wb') as file:
 		for status in tweepy.Cursor(api.user_timeline, id='cubagoodingjr').items(1800):
-			file.write(str(status.created_at.replace(tzinfo=tz.gettz('UTC')).astimezone(tz.gettz('America/Los_Angeles')).replace(tzinfo=None)) + ', ' + status.text.encode('utf8') + '\n')
+			file.write(str(status.created_at.replace(tzinfo=tz.gettz('UTC')).astimezone(tz.gettz('America/Los_Angeles')).replace(tzinfo=None))  + ', ' + str(status.created_at.date()) + ', ' + status.text.encode('utf8') + '\n')
 
 if __name__ == '__main__':
 	main()
+
+    
