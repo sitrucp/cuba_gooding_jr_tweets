@@ -6,7 +6,7 @@ import sys, os
 import json
 from dateutil import tz
 from tweet_auth import * #this is another .py file with the twitter api credentials
-from db_cubatweet import db_cubatweet * #this is another .py file with the cubatweet db credentials
+from db_cubatweet import db_cubatweet * #this is .php file with the cubatweet db credentials
 
 #connect to db
 db = MySQLdb.connect(
